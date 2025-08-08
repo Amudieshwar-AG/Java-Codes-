@@ -1,0 +1,22 @@
+package class_work;
+
+class Ab
+{
+    int d=10;
+	void display()
+	{
+		System.out.println("The value of a is "+d);
+	}
+}
+public class c {
+
+	public static void main(String[] args) 
+	{
+		Ab obj = new Ab();
+		
+		obj.display();
+		// TODO Auto-generated method stub
+
+	}
+
+}
