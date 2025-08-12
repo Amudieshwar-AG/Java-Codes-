@@ -1,0 +1,18 @@
+package class_work;
+
+class abc {
+    int reg_no;
+    String name;
+
+    abc(int r, String n) {
+        this.reg_no = r;
+        this.name = n;
+        System.out.println(reg_no + " " + name);
+    }
+}
+
+public class q {
+    public static void main(String[] args) {
+        abc ob = new abc(12, "RIT");
+    }
+}
