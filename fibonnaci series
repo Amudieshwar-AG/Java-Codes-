@@ -1,0 +1,26 @@
+package AG;
+
+class fib {
+    int i, n, a = 0, b = 1;
+
+    void performOperations() {
+         // Number of terms
+
+        System.out.print("Fibonacci Series: ");
+        for (i = 1; i <= n; i++) {
+            System.out.print(a + " "); // Print current number
+            int next = a + b; // Calculate next number
+            a = b; // Shift b to a
+            b = next; // Shift next to b
+        }
+        System.out.println(); // Move to new line after loop
+    }
+}
+
+public class AG3 {
+    public static void main(String[] args) {
+        fib obj = new fib();
+        obj.n = 10;// Create object of fib class
+        obj.performOperations(); // Call method to print Fibonacci series
+    }
+}
