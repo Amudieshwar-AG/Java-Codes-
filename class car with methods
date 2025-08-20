@@ -1,0 +1,54 @@
+package AG;
+
+// Car class
+class Car {
+    // Attributes
+    String model;
+    String color;
+
+    // Constructor
+    Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+    }
+
+    // start method
+    void start() {
+        if (model == null || model.isEmpty()) {
+            System.out.println("Car started");
+        } else {
+            System.out.println(model + " car started");
+        }
+    }
+
+    // stop method
+    void stop() {
+        System.out.println("Car stopped");
+    }
+}
+
+// Main class
+public class AG4 {
+
+    public static void main(String[] args) {
+        // Test case 1
+        Car car1 = new Car("Tesla", "Red");
+        car1.start();
+
+        // Test case 2
+        Car car2 = new Car("BMW", "Black");
+        car2.start();
+
+        // Test case 3
+        Car car3 = new Car("", "Blue");  // model empty
+        car3.start();
+
+        // Test case 4
+        Car car4 = new Car("Audi", "White");
+        // start() not called → No output
+
+        // Test case 5
+        Car car5 = new Car("Honda", "Grey");
+        car5.stop();
+    }
+}
