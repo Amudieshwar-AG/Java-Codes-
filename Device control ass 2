@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class DeviceController {
+    
+    // Method to simulate controlling devices
+    public static void controlDevices() {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("=== Device Controller ===");
+            System.out.println("Choose a device to control:");
+            System.out.println("1. Fan");
+            System.out.println("2. Light");
+            System.out.println("3. TV");
+            System.out.print("Enter your choice (1-3): ");
+
+            int choice = scanner.nextInt();
+
+            String device;
+            switch (choice) {
+                case 1:
+                    device = "Fan";
+                    break;
+                case 2:
+                    device = "Light";
+                    break;
+                case 3:
+                    device = "TV";
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid device choice!");
+            }
+
+            System.out.print("Enter action (ON/OFF): ");
+            String action = scanner.next().toUpperCase();
+
+            if (!action.equals("ON") && !action.equals("OFF")) {
+                throw new IllegalArgumentException("Invalid action! Only ON/OFF allowed.");
+            }
+
+            System.out.println(device + " is now " + action);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            scanner.close();
+            System.out.println("Exiting Device Controller...");
+        }
+    }
+
+    public static void main(String[] args) {
+        controlDevices();
+    }
+}
