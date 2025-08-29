@@ -1,0 +1,37 @@
+package AG;
+
+class Shape {
+    public void draw() { System.out.println("Drawing Shape"); }
+    public double area() { return 0.0; }
+}
+
+class Circle extends Shape {
+    double r;
+    Circle(double r){ this.r=r; }
+    public void draw(){ System.out.println("Circle r=" + r); }
+    public double area(){ return Math.PI*r*r; }
+}
+
+class Rectangle extends Shape {
+    double l,w;
+    Rectangle(double l,double w){ this.l=l; this.w=w; }
+    public void draw(){ System.out.println("Rectangle " + l + "x" + w); }
+    public double area(){ return l*w; }
+}
+
+public class AG5 {
+    public static void main(String[] args) {
+        Shape[] tests = {
+            new Circle(5),      // Circle radius 5
+            new Rectangle(10,5),// Rectangle 10x5
+            new Shape(),        // Base Shape
+            new Circle(0),      // Circle radius 0
+            new Rectangle(10,0) // Rectangle width 0
+        };
+        for(Shape s: tests){
+            s.draw();
+            System.out.println("Area=" + s.area());
+            System.out.println("-----------");
+        }
+    }
+}
